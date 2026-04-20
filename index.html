@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Eligibility</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <form id="playerForm">
+        <h1>Player TSP Calculator</h1>
+
+       <p id="disclaimer" style="font-style: italic; color: gray; display: block;">
+            *Disclaimer: None of these results are final and do not include exceptions. Eligibility is subject to further review.*
+       </p>
+
+        <p>
+        You can find the TSP and game numbers for past seasons here: 
+        <a href="https://cdn1.sportngin.com/attachments/document/0123/5681/MBL_Stats_Archive_-_All_Divisions_-_Summer_2005_to_Summer_2024.xlsx?_gl=1*wjolzs*_ga*ODY0NDE5MzI0LjE3NDE0NjMyNTA.*_ga_PQ25JN9PJ8*MTc0MjgyOTIyOC4xOC4xLjE3NDI4Mjk1OTYuNjAuMC4w#" target="_blank">
+            MBL Stats Archive (Summer 2005 to Summer 2024)
+        </a>
+        </p>
+
+        <!-- Link to the search page -->
+<!--         <a href="https://mmkanawati.github.io/player_tsp_calculator/search">Player Search</a> -->
+
+        <p>
+        You can find the league's official rules here: 
+        <a href="https://www.mbleague.com/rules" target="_blank">
+            MBL Official Rules
+        </a>
+        </p>
+        
+        <!-- Divisions Played Checkbox -->
+        <label for="divisionsPlayed">Which divisions have you played in the past two seasons? (Select all that apply):</label><br>
+        <input type="checkbox" id="d1" name="divisionsPlayed" value="D1"> D1<br>
+        <input type="checkbox" id="d2" name="divisionsPlayed" value="D2"> D2<br>
+        <input type="checkbox" id="d3" name="divisionsPlayed" value="D3"> D3<br><br>
+
+        <!-- Divisions Planned Radio -->
+        <label for="divisionsPlanned">Which division do you plan on playing?</label><br>
+        <input type="radio" id="planD1" name="divisionsPlanned" value="D1"> D1<br>
+        <input type="radio" id="planD2" name="divisionsPlanned" value="D2"> D2<br>
+        <input type="radio" id="planD3" name="divisionsPlanned" value="D3"> D3<br><br>
+
+        <p id="note" style="display: none;"><strong>Note:</strong> If the player has played fewer than 10 games in the past 2 seasons in a division, include a third season to reach a minimum of 10 games.</p>
+
+        <!-- TSP and Games Input (Initially Hidden) -->
+        <div id="D1Fields" class="divisionFields" style="display: none;">
+            <label for="D1TSP">Enter the total # of TSP in the past 2 seasons for D1:</label>
+            <input type="number" id="D1TSP" name="D1TSP" step="any"><br>
+            <label for="D1Games">Enter the total # of games played in the past 2 seasons for D1:</label>
+            <input type="number" id="D1Games" name="D1Games"><br><br>
+        </div>
+
+        <div id="D2Fields" class="divisionFields" style="display: none;">
+            <label for="D2TSP">Enter the total # of TSP in the past 2 seasons for D2:</label>
+            <input type="number" id="D2TSP" name="D2TSP" step="any"><br>
+            <label for="D2Games">Enter the total # of games played in the past 2 seasons for D2:</label>
+            <input type="number" id="D2Games" name="D2Games"><br><br>
+        </div>
+
+        <div id="D3Fields" class="divisionFields" style="display: none;">
+            <label for="D3TSP">Enter the total # of TSP in the past 2 seasons for D3:</label>
+            <input type="number" id="D3TSP" name="D3TSP" step="any"><br>
+            <label for="D3Games">Enter the total # of games played in the past 2 seasons for D3:</label>
+            <input type="number" id="D3Games" name="D3Games"><br><br>
+        </div>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <!-- Link to the search page with a box at the bottom -->
+    <div class="new-line"></div>
+    <div class="bottom-box">
+        <a href="https://mmkanawati.github.io/player_tsp_calculator/search" class="link">Player Stats By Season</a>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
